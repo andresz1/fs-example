@@ -5,7 +5,7 @@
   "license": "Proprietary",
   "private": true,
   "scripts": {
-    "start": "PORT=80 node ./bin/www",
+    "start": "PORT=3000 node ./bin/www",
     "dev": "PORT=5050 nodemon ./bin/www",
     "migrate": "node ./model/database.js"
   },

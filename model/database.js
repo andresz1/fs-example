@@ -16,6 +16,15 @@ const con = mysql.createConnection({
   port: DB_PORT || 3306
 });
 
+console.log("debug", {
+  host: DB_HOST || "127.0.0.1",
+  user: DB_USER || "root",
+  password: DB_PASS,
+  database: DB_NAME || "todos",
+  multipleStatements: true,
+  port: DB_PORT || 3306
+});
+
 con.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");

@@ -12,7 +12,8 @@ const con = mysql.createConnection({
   user: DB_USER || "root",
   password: DB_PASS,
   database: DB_NAME || "todos",
-  multipleStatements: true
+  multipleStatements: true,
+  port: DB_PORT || 3306
 });
 
 con.connect(function(err) {

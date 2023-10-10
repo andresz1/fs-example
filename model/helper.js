@@ -35,7 +35,11 @@ module.exports = async function db(query) {
       if (err) throw err;
       console.log("Connected!");
 
+      console.log("query", query);
+
       con.query(query, function(err, result) {
+        console.log("result", result);
+
         if (err) {
           results.error = err;
           console.log(err);

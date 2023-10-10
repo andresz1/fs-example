@@ -16,10 +16,6 @@ app.use(express.urlencoded({ extended: false }));
 // Sirve archivos estáticos desde la aplicación frontend React
 app.use(express.static(path.join(__dirname, "client/build")));
 
-app.get("/", function(req, res, next) {
-  res.send("Access the API at path /api");
-});
-
 app.use("/api", apiRouter);
 
 // Todo lo que no coincide con lo anterior, se envía a index.html

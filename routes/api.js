@@ -13,6 +13,7 @@ router.get("/cats", async (req, res) => {
     const cats = await getAllCats();
     res.send(cats);
   } catch (error) {
+    console.log("error", error);
     res.send(500);
   }
 });

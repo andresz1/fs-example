@@ -37,14 +37,14 @@ export default function App() {
   }, []);
 
   // Manejadores de eventos
-  const handleAdd = async (cat) => {
+  const handleAdd = async cat => {
     try {
       const response = await fetch("/api/cats", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
-        body: JSON.stringify(cat),
+        body: JSON.stringify(cat)
       });
 
       if (response.ok) {
@@ -59,12 +59,12 @@ export default function App() {
     }
   };
 
-  const handleRemove = async (cat) => {
+  const handleRemove = async cat => {
     const catId = cat.id;
 
     try {
       const response = await fetch(`/api/cats/${catId}`, {
-        method: "DELETE",
+        method: "DELETE"
       });
 
       if (response.ok) {
@@ -86,12 +86,12 @@ export default function App() {
       const response = await fetch(`/api/cats/${catId}`, {
         method: "PUT",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
           ...cat,
-          age: newAge,
-        }),
+          age: newAge
+        })
       });
 
       if (response.ok) {
@@ -108,7 +108,7 @@ export default function App() {
 
   return (
     <div>
-      <h1>Lista de gatos</h1>
+      <h1>Lista de gatos 🐈</h1>
 
       <div>
         {isLoading && <p>Cargando</p>}
@@ -117,7 +117,7 @@ export default function App() {
 
         {!isLoading && !error && (
           <ul>
-            {cats.map((cat) => (
+            {cats.map(cat => (
               <li key={cat.id}>
                 {cat.name} - {cat.age}
                 <button
